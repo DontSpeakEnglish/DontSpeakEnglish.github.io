@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Number</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#calculate').click(function(){
+                var number = $('#number').val();
+                $.ajax({
+                    url: '/square',
+                    type: 'POST',
+                    data: {number: number},
+                    success: function(response){
+                        if(response.error) {
+                            alert(response.error);
+                        } else {
+                            $('#number').val(response.result);
+                        }
+                    },
+                    error: function(){
+                        alert('Error occurred while processing your request.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="number" name="number">
+    <button id="calculate">Calcure</button>
+</body>
+</html>
