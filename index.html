@@ -1,9 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>PyScript!</title>
         <link
             rel="stylesheet"
             href="https://pyscript.net/snapshots/2024.9.2/core.css"
@@ -12,12 +9,64 @@
             type="module"
             src="https://pyscript.net/snapshots/2024.9.2/core.js"
         ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控件布局</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        #key {
+            border: 2px solid #007BFF;
+            margin-top: 20px;
+        }
+    </style>
     </head>
     <body>
-        <!-- Use MicroPython to evaluate some Python -->
-        <script type="mpy" terminal>
-            print("Hello, world!")
-        </script>
-        <p1>a</p1>
+        <div class="container">
+        <input type="text" id="inputText" placeholder="请输入内容">
+        <button id="encryptButton">加密</button>
+        <button id="clearButton">清空</button>
+        <textarea id="key" readonly></textarea>
+    </div>
     </body>
 </html>
