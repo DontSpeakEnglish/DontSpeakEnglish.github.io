@@ -67,6 +67,13 @@
         <button id="encryptButton">加密</button>
         <button id="clearButton">清空</button>
         <textarea id="key" readonly></textarea>
+
+        <script>
+            document.getElementById('clearButton').addEventListener('click', function () {
+            document.getElementById('inputText').value = ''; // 清空输入框
+            document.getElementById('key').value = ''; // 清空文本框
+            });
+        </script>
     </div>
     </body>
 </html>
